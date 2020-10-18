@@ -4,7 +4,7 @@ A small project overviewing the basic data of COVID19 for each country for the c
 ![picture alt](https://wannesverelst.me/assets/images/covid/covid-data-overview.jpg "World Overview")
 ![picture alt](https://wannesverelst.me/assets/images/covid/covid-data-country.jpg "Country Detail")
 
-[https://wannesverelst.me/playground/covid-data](Demo)
+[Demo](https://wannesverelst.me/playground/covid-data)
 
 ## Built width
 - [ReactJS](https://reactjs.org/)
