@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  --borderThickness: 2px;
+  --mainColor: white;
+  --secundaryColor: black;
+
+  overflow: hidden;
+  color: var(--secundaryColor);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  background: rgb(238,238,238);
+  background: -moz-radial-gradient(circle, rgba(238,238,238,1) 60%, rgba(194,194,194,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(238,238,238,1) 60%, rgba(194,194,194,1) 100%);
+  background: radial-gradient(circle, rgba(238,238,238,1) 60%, rgba(194,194,194,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee",endColorstr="#c2c2c2",GradientType=1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul{ list-style: none; }
+
+#data{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  padding: 30px;
+  background-color: rgba(255,255,255, .8);
+  letter-spacing: 0.2rem;
+  border-top: 4px solid black;
+
+  clip-path: 
+    polygon(
+      0% 20px,                 /* top left */
+      20px 0%,                 /* top left */
+      100% 0%,    /* top right */
+      100% 20px,               /* top right */
+      100% calc(100% - 20px),  /* bottom right */
+      calc(100% - 20px) 100%,  /* bottom right */
+      20px 100%,               /* bottom left */
+      0 100%      /* bottom left */
+    );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#data h2{ font-weight: 400; font-size: 0.9rem; }
+
+#data li{
+  font-weight: 600;
+  border: var(--borderThickness) solid var(--secundaryColor);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
+#data li .label,
+#data li .value{
+  padding: 10px 13px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+#data li .label{
+  background: var(--secundaryColor);
+  color: var(--mainColor);
+  text-transform: uppercase;
+}
+#data li .value{
+  transition: width 1s ease-out;
+}
+#data sup{
+  color: #B80C09;
+  letter-spacing: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#data select{
+  padding: 10px 15px;
+
+  border: var(--borderThickness) solid var(--secundaryColor);
+  border-radius: 0;
+  background-color: rgba(0,0,0,0);
 }

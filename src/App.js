@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import { Circle } from 'react-preloaders';
+
+import Data from "./Components/Data"
+import Globe from "./Components/Globe"
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {selectedCountry: {country: null, coords: null}};
+  }
+
+  updateCountry = (data) => {
+      this.setState({selectedCountry: {country: data.country, coords: data.coords}});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Data selectedCountry={this.state.selectedCountry} updateCountry={this.updateCountry}/>
+        <Globe selectedCountry={this.state.selectedCountry} updateCountry={this.updateCountry}/>
+        <Circle time={500}/>
+      </div>
+    );
+  }
 }
 
 export default App;
